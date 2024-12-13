@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<ruleset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" name="PHP_CodeSniffer"
+         xsi:noNamespaceSchemaLocation="vendor/squizlabs/php_codesniffer/phpcs.xsd">
+
+    <file>includes</file>
+
+    <rule ref="Wordpress">
+        <exclude name="Squiz.Commenting.FileComment.Missing"/>
+    </rule>
+</ruleset>

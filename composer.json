@@ -1,0 +1,42 @@
+{
+    "name": "bulbakh/wp-my-product-webspark",
+    "description": "my plugin",
+    "type": "wordpress-plugin",
+    "version": "1.0.0",
+    "require": {
+        "php": ">=7.4"
+    },
+    "require-dev": {
+        "wp-coding-standards/wpcs": "^3.1",
+        "squizlabs/php_codesniffer": "^3.11",
+        "phpstan/phpstan": "^2.0",
+        "szepeviktor/phpstan-wordpress": "^2.0"
+    },
+    "autoload": {
+        "classmap": [
+            "includes"
+        ]
+    },
+    "authors": [
+        {
+            "name": "bulbakh",
+            "email": "bulbakh@gmail.com"
+        }
+    ],
+    "config": {
+        "allow-plugins": {
+            "dealerdirect/phpcodesniffer-composer-installer": true
+        }
+    },
+    "scripts": {
+        "test": [
+            "@test:phpstan",
+            "@test:cs:fix",
+            "@test:cs",
+            "@test:cs:fix"
+        ],
+        "test:cs": "vendor/bin/phpcs -s --colors --report-width=180",
+        "test:cs:fix": "vendor/bin/phpcbf",
+        "test:phpstan": "phpstan --memory-limit=2G"
+    }
+}

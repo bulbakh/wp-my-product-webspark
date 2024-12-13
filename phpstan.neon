@@ -1,0 +1,10 @@
+includes:
+    - vendor/szepeviktor/phpstan-wordpress/extension.neon
+    - wp-my-product-webspark.php
+
+parameters:
+
+    paths:
+        - includes/
+
+    level: 10
