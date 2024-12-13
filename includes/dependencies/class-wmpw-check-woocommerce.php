@@ -3,19 +3,21 @@
 namespace Wp_My_Product_Webspark\Dependencies;
 
 defined( 'ABSPATH' ) || exit;
+
 /**
  * Class to check if WooCommerce is installed and activated.
  *
  * @package WMPW
  */
-class WMPW_Check_WooCommerce {
+class WMPW_Check_WooCommerce implements WMPW_Check_Interface {
+
 
 	/**
 	 * Check if WooCommerce is installed and activated.
 	 *
 	 * @return void
 	 */
-	public static function check() {
+	public static function check(): void {
 		if ( ! function_exists( 'is_plugin_active' ) ) {
 			require_once ABSPATH . 'wp-admin/includes/plugin.php';
 		}
@@ -31,7 +33,7 @@ class WMPW_Check_WooCommerce {
 						<p>
 							<?php
 							printf(
-								/* translators: %s: Plugin name. */
+							/* translators: %s: Plugin name. */
 								esc_html__(
 									'WooCommerce is not installed or activated. %s will not work. Please install and activate WooCommerce.',
 									'wp-my-product-webspark'
