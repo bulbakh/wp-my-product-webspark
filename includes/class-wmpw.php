@@ -2,6 +2,8 @@
 
 namespace Wp_My_Product_Webspark;
 
+use Wp_My_Product_Webspark\Ui\WMPW_Content_My_Products;
+
 defined( 'ABSPATH' ) || exit;
 
 /**
@@ -54,8 +56,7 @@ class WMPW {
 		add_action( 'admin_init', array( 'Wp_My_Product_Webspark\WMPW_Activator', 'check_dependencies' ) );
 		add_action( 'init', new WMPW_Endpoints() );
 		add_filter( 'woocommerce_account_menu_items', new WMPW_My_Account_Menu() );
-        add_action('woocommerce_account_my-products_endpoint', new WMPW__My_Products_Content());
-        add_action('woocommerce_account_add-product_endpoint', new WMPW__My_Products_Content());
-
-    }
+		add_action( 'woocommerce_account_my-products_endpoint', new WMPW_Content_My_Products() );
+		add_action( 'woocommerce_account_add-product_endpoint', new WMPW_Content_My_Products() );
+	}
 }

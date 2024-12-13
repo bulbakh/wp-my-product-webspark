@@ -1,0 +1,7 @@
+.wmpw-products-table {
+    border-collapse:collapse;
+}
+.wmpw-products-table td, .wmpw-products-table th {
+    border: gray 1px solid;
+    padding: 0.5rem 1rem;
+}

@@ -17,16 +17,11 @@
 defined( 'ABSPATH' ) || exit;
 
 define( 'WMPW_PLUGIN_FILE', __FILE__ );
+define( 'WMPW_PLUGIN_DIR', plugin_dir_path(WMPW_PLUGIN_FILE));
+define( 'WMPW_PLUGIN_URL', plugin_dir_url(WMPW_PLUGIN_FILE));
 define( 'WMPW_PLUGIN_NAME', 'WpMyProductWebspark' );
+define( 'WMPW_PLUGIN_VERSION', '1.0.0' );
 
 require __DIR__ . '/vendor/autoload.php';
 
 add_action( 'plugins_loaded', array( 'Wp_My_Product_Webspark\WMPW', 'instance' ) );
-
-
-
-// 4. Додавання стилів (за потреби)
-function wmpw_enqueue_styles() {
-    wp_enqueue_style( 'wmpw-my-products', plugin_dir_url( __FILE__ ) . 'css/style.css' );
-}
-add_action( 'wp_enqueue_scripts', 'wmpw_enqueue_styles' );
