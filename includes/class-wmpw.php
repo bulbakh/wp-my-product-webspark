@@ -58,5 +58,6 @@ class WMPW {
 		add_filter( 'woocommerce_account_menu_items', new WMPW_My_Account_Menu() );
 		add_action( 'woocommerce_account_my-products_endpoint', new WMPW_Content_My_Products() );
 		add_action( 'woocommerce_account_add-product_endpoint', new WMPW_Content_My_Products() );
+		add_action( 'admin_post_wmpw_delete_product', array( 'Wp_My_Product_Webspark\WMPW_Admin_Actions', 'handle_delete_product' ) );
 	}
 }
