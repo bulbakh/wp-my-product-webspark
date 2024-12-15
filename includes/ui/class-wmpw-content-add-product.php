@@ -27,9 +27,10 @@ class WMPW_Content_Add_Product extends WMPW_Content {
 				wp_die( esc_html__( 'Invalid nonce. Please try again.', 'wp-my-product-webspark' ) );
 			}
 
-			$name  = sanitize_text_field( wp_unslash( $_POST['product_name'] ?? '' ) );
-			$price = sanitize_text_field( wp_unslash( $_POST['product_price'] ?? '' ) );
-			$qty   = floatval( sanitize_text_field( wp_unslash( $_POST['product_quantity'] ?? 0 ) ) );
+			$name        = sanitize_text_field( wp_unslash( $_POST['product_name'] ?? '' ) );
+			$price       = sanitize_text_field( wp_unslash( $_POST['product_price'] ?? '' ) );
+			$qty         = floatval( sanitize_text_field( wp_unslash( $_POST['product_quantity'] ?? 0 ) ) );
+			$description = wp_kses_post( wp_unslash( $_POST['product_description'] ?? '' ) );
 
 			if ( empty( $name ) ) {
 				$this->errors['product_name'] = __( 'Product name is required.', 'wp-my-product-webspark' );
@@ -41,6 +42,7 @@ class WMPW_Content_Add_Product extends WMPW_Content {
 			$product->set_regular_price( $price );
 			$product->set_manage_stock( true );
 			$product->set_stock_quantity( $qty );
+			$product->set_description( $description );
 			$product->set_status( 'pending' );
 			$product->save();
 

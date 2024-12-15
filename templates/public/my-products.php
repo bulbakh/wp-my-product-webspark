@@ -13,12 +13,12 @@ if (empty($products)) : ?>
     <?php
     return; endif; ?>
 
-<h2><?= esc_html__('My Products', 'wp-my-product-webspark'); ?></h2>
+<h2><?= esc_html__('My products', 'wp-my-product-webspark'); ?></h2>
 
 <table class="wmpw-products-table">
     <thead>
     <tr>
-        <th><?= esc_html__('Product Name', 'wp-my-product-webspark'); ?></th>
+        <th><?= esc_html__('Product name', 'wp-my-product-webspark'); ?></th>
         <th><?= esc_html__('Quantity', 'wp-my-product-webspark'); ?></th>
         <th><?= esc_html__('Price', 'wp-my-product-webspark'); ?></th>
         <th><?= esc_html__('Status', 'wp-my-product-webspark'); ?></th>
