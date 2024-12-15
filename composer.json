@@ -32,8 +32,7 @@
         "test": [
             "@test:phpstan",
             "@test:cs:fix",
-            "@test:cs",
-            "@test:cs:fix"
+            "@test:cs"
         ],
         "test:cs": "vendor/bin/phpcs -s --colors --report-width=180",
         "test:cs:fix": "vendor/bin/phpcbf",

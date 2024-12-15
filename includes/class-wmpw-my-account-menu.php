@@ -15,8 +15,8 @@ class WMPW_My_Account_Menu {
 	public function __invoke( array $menu_links ): array {
 		$menu_links['my-products'] = __( 'My Products', 'wp-my-product-webspark' );
 		$new_items                 = array(
-			'add-product' => __( 'Add Product', 'wp-my-product-webspark' ),
-			'my-products' => __( 'My Products', 'wp-my-product-webspark' ),
+			'add-product' => __( 'Add product', 'wp-my-product-webspark' ),
+			'my-products' => __( 'My products', 'wp-my-product-webspark' ),
 		);
 
 		return array( reset( $menu_links ) ) + $new_items + array_slice( $menu_links, 1, null, true );

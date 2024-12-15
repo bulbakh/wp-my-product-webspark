@@ -6,11 +6,12 @@ defined( 'ABSPATH' ) || exit;
 
 /**
  * Class WMPW_Endpoints
+ * todo maybe remove?
  */
 class WMPW_Endpoints {
 
 	/**
-	 * Register my products endpoint     *
+	 * Register my products endpoint
 	 */
 	public function __invoke(): void {
 		add_rewrite_endpoint( 'add-product', EP_ROOT | EP_PAGES );

@@ -14,7 +14,7 @@ abstract class WMPW_Content {
 	 *
 	 * @var int
 	 */
-	protected int $posts_per_page = 3;
+	protected int $posts_per_page = 3; // todo add to settings.
 
 	/**
 	 *  Render template

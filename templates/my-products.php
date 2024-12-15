@@ -13,6 +13,8 @@ if (empty($products)) : ?>
     <?php
     return; endif; ?>
 
+<h2><?= esc_html__('My Products', 'wp-my-product-webspark'); ?></h2>
+
 <table class="wmpw-products-table">
     <thead>
     <tr>
@@ -20,7 +22,8 @@ if (empty($products)) : ?>
         <th><?= esc_html__('Quantity', 'wp-my-product-webspark'); ?></th>
         <th><?= esc_html__('Price', 'wp-my-product-webspark'); ?></th>
         <th><?= esc_html__('Status', 'wp-my-product-webspark'); ?></th>
-        <th><?= esc_html__('Actions', 'wp-my-product-webspark'); ?></th>
+        <th><?= esc_html__('Edit', 'wp-my-product-webspark'); ?></th>
+        <th><?= esc_html__('Delete', 'wp-my-product-webspark'); ?></th>
     </tr>
     </thead>
     <tbody>
@@ -32,11 +35,12 @@ if (empty($products)) : ?>
             <td><?= $product['price']; ?></td>
             <td><?= esc_html($product['status']); ?></td>
             <td>
-                <button><a href="<?= esc_url($product['edit_url']); ?>"><?= esc_html__(
+                <a href="<?= esc_url($product['edit_url']); ?>"><?= esc_html__(
                             'Edit',
                             'wp-my-product-webspark'
-                        ); ?></a></button>
-                |
+                        ); ?></a>
+            </td>
+            <td>
                 <button><a href="<?= esc_url($product['delete_url']); ?>" class="wmpw-delete-product"
                            onclick="return confirm('<?= esc_js(
                                __('Are you sure you want to delete this product?', 'wp-my-product-webspark')

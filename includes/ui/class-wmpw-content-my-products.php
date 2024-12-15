@@ -10,11 +10,12 @@ defined( 'ABSPATH' ) || exit;
  * Class WMPW_Content_My_Products
  */
 class WMPW_Content_My_Products extends WMPW_Content {
+
 	/**
 	 * Get products
 	 *
-	 * @param  int $paged Paged.
-	 * @param  int $posts_per_page Posts per page.
+	 * @param  int $paged  Paged.
+	 * @param  int $posts_per_page  Posts per page.
 	 * @return array
 	 */
 	public function get_products( int $paged = 1, int $posts_per_page = 10 ): array {
@@ -22,6 +23,7 @@ class WMPW_Content_My_Products extends WMPW_Content {
 			'post_type'      => 'product',
 			'posts_per_page' => $posts_per_page,
 			'paged'          => $paged,
+			'post_status'    => 'any',
 		);
 		$query = new WP_Query( $args );
 
@@ -62,7 +64,6 @@ class WMPW_Content_My_Products extends WMPW_Content {
 	 * Render the template
 	 */
 	public function __invoke(): void {
-
 		$paged = max( 1, get_query_var( 'paged', 1 ) );
 		$data  = $this->get_products( $paged, $this->posts_per_page );
 
