@@ -29,7 +29,7 @@ abstract class WMPW_Content {
 			$$key = $value; // instead extract().
 		}
 
-		$template_path = WMPW_PLUGIN_DIR . 'templates/' . $template_name;
+		$template_path = WMPW_PLUGIN_DIR . 'templates/public/' . $template_name;
 		if ( file_exists( $template_path ) ) {
 			include $template_path;
 		} else {
