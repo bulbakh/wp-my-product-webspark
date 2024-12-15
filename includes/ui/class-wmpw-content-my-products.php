@@ -24,6 +24,7 @@ class WMPW_Content_My_Products extends WMPW_Content {
 			'posts_per_page' => $posts_per_page,
 			'paged'          => $paged,
 			'post_status'    => 'any',
+			'author'         => get_current_user_id(),
 		);
 		$query = new WP_Query( $args );
 

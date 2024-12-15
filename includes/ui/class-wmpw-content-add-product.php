@@ -44,6 +44,12 @@ class WMPW_Content_Add_Product extends WMPW_Content {
 			$product->set_stock_quantity( $qty );
 			$product->set_description( $description );
 			$product->set_status( 'pending' );
+
+			if ( ! empty( $_POST['product_image'] ) ) {
+				$image_id = intval( $_POST['product_image'] );
+				$product->set_image_id( $image_id );
+			}
+
 			$product->save();
 
 			wp_safe_redirect( wc_get_endpoint_url( 'my-products', '', wc_get_page_permalink( 'myaccount' ) ) );
@@ -66,6 +72,27 @@ class WMPW_Content_Add_Product extends WMPW_Content {
 				),
 				'errors'   => $this->errors,
 			)
+		);
+
+		add_action(
+			'wp_enqueue_scripts',
+			function () {
+				wp_enqueue_media();
+				wp_enqueue_script(
+					'wmpw-media-script',
+					WMPW_PLUGIN_URL . 'assets/js/media.js',
+					array( 'jquery' ),
+					'1.0.0',
+					true
+				);
+				wp_localize_script(
+					'wmpw-media-script',
+					'wmpwVars',
+					array(
+						'userID' => get_current_user_id(),
+					)
+				);
+			}
 		);
 	}
 }

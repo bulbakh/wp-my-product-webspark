@@ -41,6 +41,6 @@ abstract class WMPW_Content {
 	 * Enqueue styles
 	 */
 	public function wmpw_enqueue_styles(): void {
-		wp_enqueue_style( 'wmpw-my-products', WMPW_PLUGIN_URL . '/css/style.css', array(), WMPW_PLUGIN_VERSION );
+		wp_enqueue_style( 'wmpw-my-products', WMPW_PLUGIN_URL . '/assets/css/style.css', array(), WMPW_PLUGIN_VERSION );
 	}
 }
