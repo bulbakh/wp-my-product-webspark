@@ -35,7 +35,7 @@
             "@test:cs"
         ],
         "test:cs": "vendor/bin/phpcs -s --colors --report-width=180",
-        "test:cs:fix": "vendor/bin/phpcbf",
+        "test:cs:fix": "vendor/bin/phpcbf || exit 0",
         "test:phpstan": "phpstan --memory-limit=2G"
     }
 }
