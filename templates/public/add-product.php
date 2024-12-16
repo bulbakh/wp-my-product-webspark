@@ -53,7 +53,7 @@ defined('ABSPATH') || exit;
 
     <p>
         <label for="product_image"><?= esc_html__('Product image', 'wp-my-product-webspark'); ?></label>
-        <button type="button" id="product_image_button" class="button">
+        <button type="button" id="product_image_button" class="wp-element-button">
 			<?= esc_html__('Select image', 'wp-my-product-webspark'); ?>
         </button>
         <input type="hidden" id="product_image" name="product_image">
@@ -62,6 +62,6 @@ defined('ABSPATH') || exit;
     <div id="product_image_preview"></div>
 
     <p>
-        <button type="submit" class="button button-primary"><?= esc_html__('Add Product', 'wp-my-product-webspark'); ?></button>
+        <button type="submit" class="wp-element-button"><?= esc_html__('Add Product', 'wp-my-product-webspark'); ?></button>
     </p>
 </form>

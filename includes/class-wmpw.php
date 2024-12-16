@@ -41,26 +41,26 @@ class WMPW {
 		if ( empty( self::$instance ) ) {
 			self::$instance = new self();
 
-			self::$instance->base_hooks();
+			self::$instance->hooks();
 		}
-		do_action( 'wpmyprod_plugin_loaded' );
+		do_action( 'wmpw_plugin_loaded' );
 
 		return self::$instance;
 	}
 
 	/**
-	 * Add base hooks for the core functionality
+	 * Add hooks for the core functionality
 	 *
 	 * @return void
 	 */
-	private function base_hooks(): void {
+	private function hooks(): void {
 		add_action( 'admin_init', array( 'Wp_My_Product_Webspark\WMPW_Activator', 'check_dependencies' ) );
 		add_action( 'init', new WMPW_Endpoints() );
 		add_filter( 'woocommerce_account_menu_items', new WMPW_My_Account_Menu() );
 		add_action( 'woocommerce_account_my-products_endpoint', new WMPW_Content_My_Products() );
 		add_action( 'woocommerce_account_add-product_endpoint', new WMPW_Content_Add_Product() );
 		add_action( 'admin_post_wmpw_delete_product', array( 'Wp_My_Product_Webspark\WMPW_Admin_Actions', 'handle_delete_product' ) );
-		add_filter( 'woocommerce_email_settings', array( 'WMPW_Admin_Notification', 'add_email_notification_setting' ) );
-		add_action( 'save_post_product', array( 'WMPW_Admin_Notification', 'send_admin_notification' ), 10, 3 );
+		add_filter( 'woocommerce_email_settings', array( 'Wp_My_Product_Webspark\WMPW_Admin_Notification', 'add_email_notification_setting' ) );
+		add_action( 'save_post_product', array( 'Wp_My_Product_Webspark\WMPW_Admin_Notification', 'send_admin_notification' ), 10, 3 );
 	}
 }

@@ -1,5 +1,10 @@
 <?php
 
+namespace Wp_My_Product_Webspark;
+
+use WC_Logger;
+use WP_Post;
+
 /** Class WMPW_Admin_Notification */
 class WMPW_Admin_Notification {
 	/**

@@ -1,6 +1,6 @@
 <?php
 /**
- * Plugin Name: WpMyProductWebspark
+ * Plugin Name: Wp My Product Webspark
  * Plugin URI: https://github.com/bulbakh/wp-my-product-webspark
  * Description: The perfect extension to woocommerce for next-level ecommerce. More beautifully than ever.
  * Version: 1.0.0
@@ -19,7 +19,7 @@ defined( 'ABSPATH' ) || exit;
 define( 'WMPW_PLUGIN_FILE', __FILE__ );
 define( 'WMPW_PLUGIN_DIR', plugin_dir_path(WMPW_PLUGIN_FILE));
 define( 'WMPW_PLUGIN_URL', plugin_dir_url(WMPW_PLUGIN_FILE));
-define( 'WMPW_PLUGIN_NAME', 'WpMyProductWebspark' );
+define( 'WMPW_PLUGIN_NAME', 'Wp My Product Webspark' );
 define( 'WMPW_PLUGIN_VERSION', '1.0.0' );
 
 require __DIR__ . '/vendor/autoload.php';

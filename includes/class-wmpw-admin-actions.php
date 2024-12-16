@@ -2,6 +2,8 @@
 
 namespace Wp_My_Product_Webspark;
 
+use JetBrains\PhpStorm\NoReturn;
+
 defined( 'ABSPATH' ) || exit;
 
 /**
@@ -10,13 +12,17 @@ defined( 'ABSPATH' ) || exit;
  */
 class WMPW_Admin_Actions {
 
+
 	/**
 	 * Handles the deletion of a product.
 	 *
 	 * @return void
 	 */
 	public function handle_delete_product(): void {
-		if ( ! isset( $_GET['_wpnonce'] ) || ! wp_verify_nonce( sanitize_text_field( wp_unslash( $_GET['_wpnonce'] ) ), 'wmpw_delete_product' ) ) {
+		if ( ! isset( $_GET['_wpnonce'] ) || ! wp_verify_nonce(
+			sanitize_text_field( wp_unslash( $_GET['_wpnonce'] ) ),
+			'wmpw_delete_product'
+		) ) {
 			wp_die( esc_html__( 'Invalid request.', 'wp-my-product-webspark' ) );
 		}
 

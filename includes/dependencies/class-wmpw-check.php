@@ -5,7 +5,7 @@ namespace Wp_My_Product_Webspark\Dependencies;
 interface WMPW_Check_Interface {
 
 	/**
-	 * Check if WooCommerce is installed and activated.
+	 * Check dependencies.
 	 */
 	public static function check(): void;
 }

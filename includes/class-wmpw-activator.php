@@ -12,7 +12,7 @@ class WMPW_Activator {
 	 * Run activation checks.
 	 */
 	public static function check_dependencies(): void {
-		$dependencies_dir = plugin_dir_path( WMPW_PLUGIN_FILE ) . 'includes/dependencies';
+		$dependencies_dir = WMPW_PLUGIN_DIR . 'includes/dependencies';
 
 		$files = glob( $dependencies_dir . '/*check*.php' );
 
